@@ -47,8 +47,8 @@ int hoare_partition(int *array, int low, int high, size_t size)
 }
 
 /**
- * quicksort_hoare - Recursive function that implements the Quick sort algorithm
- *                   using the Hoare partition scheme
+ * quicksort_hoare - Recursive function that implements
+ *                   the Quick sort algorithm using Hoare partition scheme
  * @array: Array to be sorted
  * @low: Starting index of the partition to be sorted
  * @high: Ending index of the partition to be sorted
