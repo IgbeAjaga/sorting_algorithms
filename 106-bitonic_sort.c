@@ -19,6 +19,7 @@ void bitonic_merge(int *array, size_t low, size_t count, int dir)
 			if (dir == (array[i] > array[i + k]))
 			{
 				int temp = array[i];
+
 				array[i] = array[i + k];
 				array[i + k] = temp;
 			}
