@@ -4,14 +4,12 @@
  * swap - Swaps two elements in an array
  * @a: Pointer to the first element
  * @b: Pointer to the second element
- * @array: array to be sorted
  */
-void swap(int *array, ssize_t a, ssize_t b)
+void swap(int *a, int *b)
 {
-	int temp;
-	tmp = array[a];
-	array[a] = array[b];
-	array[b] = temp;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 /**
@@ -23,11 +21,11 @@ void swap(int *array, ssize_t a, ssize_t b)
  *
  * Return: The index of the pivot element
  */
-int partition(int *array, ssize_t low, ssize_t high)
+int partition(int *array, int low, int high)
 {
 	int pivot = array[high];
-	ssize_t i = low - 1;
-	ssize_t j;
+	int i = low - 1;
+	int j;
 
 	for (j = low; j <= high - 1; j++)
 	{
@@ -51,11 +49,11 @@ int partition(int *array, ssize_t low, ssize_t high)
  * @low: The starting index of the partition
  * @high: The ending index of the partition
  */
-void quicksort(int *array, ssize_t low, ssize_t high)
+void quicksort(int *array, int low, int high)
 {
 	if (low < high)
 	{
-		ssize_t pi = partition(array, low, high);
+		int pi = partition(array, low, high);
 
 		quicksort(array, low, pi - 1);
 		quicksort(array, pi + 1, high);
@@ -63,7 +61,7 @@ void quicksort(int *array, ssize_t low, ssize_t high)
 }
 
 /**
- * quick_sort - Sorts an array of integers in ascending order using the Quick sort algorithm
+ * quick_sort - Sorts an array in ascending order using Quick sort algorithm
  * @array: The array to be sorted
  * @size: The size of the array
  */
@@ -74,4 +72,3 @@ void quick_sort(int *array, size_t size)
 
 	quicksort(array, 0, size - 1);
 }
-
