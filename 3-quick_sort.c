@@ -4,12 +4,14 @@
  * swap - Swaps two elements in an array
  * @a: Pointer to the first element
  * @b: Pointer to the second element
+ * @array: array to be sorted
  */
-void swap(int *a, int *b)
+void swap(int *array, ssize_t a, ssize_t b)
 {
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+	int temp;
+	tmp = array[a];
+	array[a] = array[b];
+	array[b] = temp;
 }
 
 /**
@@ -21,11 +23,11 @@ void swap(int *a, int *b)
  *
  * Return: The index of the pivot element
  */
-int partition(int *array, int low, int high)
+int partition(int *array, ssize_t low, ssize_t high)
 {
 	int pivot = array[high];
-	int i = low - 1;
-	int j;
+	ssize_t i = low - 1;
+	ssize_t j;
 
 	for (j = low; j <= high - 1; j++)
 	{
@@ -49,11 +51,11 @@ int partition(int *array, int low, int high)
  * @low: The starting index of the partition
  * @high: The ending index of the partition
  */
-void quicksort(int *array, int low, int high)
+void quicksort(int *array, ssize_t low, ssize_t high)
 {
 	if (low < high)
 	{
-		int pi = partition(array, low, high);
+		ssize_t pi = partition(array, low, high);
 
 		quicksort(array, low, pi - 1);
 		quicksort(array, pi + 1, high);
