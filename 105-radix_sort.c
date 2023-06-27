@@ -18,7 +18,7 @@ int getMax(int *array, size_t size)
 			max = array[i];
 	}
 
-	return max;
+	return (max);
 }
 
 /**
@@ -31,7 +31,7 @@ void countSort(int *array, size_t size, int exp)
 {
 	int *output, count[10] = {0};
 	size_t i;
-	
+
 	output = malloc(sizeof(int) * size);
 	if (output == NULL)
 		return;
