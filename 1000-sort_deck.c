@@ -16,6 +16,7 @@ int compare_cards(const void *card1, const void *card2)
 	};
 
 	int i;
+
 	for (i = 0; i < 13; i++)
 	{
 		if (strcmp(node1->card->value, values[i]) == 0)
@@ -24,7 +25,7 @@ int compare_cards(const void *card1, const void *card2)
 			value2 += i;
 	}
 
-	return value1 - value2;
+	return (value1 - value2);
 }
 
 void sort_deck(deck_node_t **deck)
