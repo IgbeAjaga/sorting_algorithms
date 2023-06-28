@@ -2,7 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+/**
+ * compare_cards - Compare two cards
+ * @card1: Pointer to the first card
+ * @card2: Pointer to the second card
+ *
+ * Return: Difference in card values
+ */
 int compare_cards(const void *card1, const void *card2)
 {
 	const deck_node_t *node1 = *(const deck_node_t **)card1;
@@ -28,6 +34,10 @@ int compare_cards(const void *card1, const void *card2)
 	return (value1 - value2);
 }
 
+/**
+ * sort_deck - Sort a deck of cards
+ * @deck: Double pointer to the deck to be sorted
+ */
 void sort_deck(deck_node_t **deck)
 {
 	size_t count = 0;
